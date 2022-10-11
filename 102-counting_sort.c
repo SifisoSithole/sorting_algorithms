@@ -13,10 +13,10 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	char *p;
 
 	if (nmemb == 0 || size == 0)
-		return ('\0');
+		return (NULL);
 	p = malloc(nmemb * size);
-	if (p == '\0')
-		return ('\0');
+	if (p == NULL)
+		return (NULL);
 	for (i = 0; i < (nmemb * size); i++)
 		p[i] = '\0';
 	return (p);
@@ -32,7 +32,7 @@ void counting_sort(int *array, size_t size)
 	int index, maximun = 0, *counter = '\0', *tmp = '\0';
 	size_t i;
 
-	if (array == '\0' || size < 2)
+	if (array == NULL || size < 2)
 		return;
 	for (i = 0; i < size; i++)
 		if (array[i] > maximun)
